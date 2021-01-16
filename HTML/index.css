@@ -3,3 +3,19 @@
     src: url("fonts/Montserrat-Regular.ttf");
 }
 
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: rgb(13, 11, 31)
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-size: 60px;
+    color: #F7F7F7;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
+    position: relative;
+    right: 15vw;
+    margin-top: 25vh;
+}
