@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://background.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=2]
@@ -8,9 +8,6 @@
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
@@ -85,18 +82,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Botão - Sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Botão - Personagem" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 margin_top = 349.0
 margin_right = 250.0
 margin_bottom = 399.0
 rect_min_size = Vector2( 250, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
-text = "Sair"
+custom_fonts/font = SubResource( 2 )
+text = "Escolha seu personagem"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botão - Começar" to="MarginContainer/HBoxContainer/VBoxContainer" method="_on_Boto__Comear_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botão - Instruções" to="MarginContainer/HBoxContainer/VBoxContainer" method="_on_Boto__Instrues_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botão - Sair" to="MarginContainer/HBoxContainer/VBoxContainer" method="_on_Boto__Sair_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Botão - Personagem" to="MarginContainer/HBoxContainer/VBoxContainer" method="_on_Boto__Personagem_pressed"]

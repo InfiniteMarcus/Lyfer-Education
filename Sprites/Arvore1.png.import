@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Homem3.png-ee491c1e0cd620cc9a9fa38c393ee4d1.stex"
+path="res://.import/Arvore1.png-f748cdd6722ff1841f0661fd9bb2dd47.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Homem3.png"
-dest_files=[ "res://.import/Homem3.png-ee491c1e0cd620cc9a9fa38c393ee4d1.stex" ]
+source_file="res://Sprites/Arvore1.png"
+dest_files=[ "res://.import/Arvore1.png-f748cdd6722ff1841f0661fd9bb2dd47.stex" ]
 
 [params]
 
