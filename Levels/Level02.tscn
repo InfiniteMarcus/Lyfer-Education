@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/unknown.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/CameraFollow.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/Homem1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Mulher-3.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Background.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Moeda-Big.png" type="Texture" id=7]
@@ -11,33 +11,33 @@
 [ext_resource path="res://Fonts/FSEX300.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17.9773, 48.7449 )
+extents = Vector2( 14.9621, 48.7449 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1200, 32.8473 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 260.095, 342.221 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 23
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 55
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 10 )
-
 [sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 10 )
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 10 )
+
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 16.0
 height = 16.0
 
@@ -70,12 +70,12 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 43.9094, -14.6444 )
-scale = Vector2( 1.59876, 1.51092 )
+position = Vector2( 42.9833, -14.6444 )
+scale = Vector2( 1.42063, 1.50215 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 44.0227, -14.7553 )
+position = Vector2( 42.9104, -15.0359 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -116,19 +116,18 @@ current = true
 script = ExtResource( 3 )
 
 [node name="Obstaculo" type="StaticBody2D" parent="."]
-position = Vector2( 947.145, 480.857 )
+position = Vector2( 931.588, 388.226 )
 scale = Vector2( 0.138996, 0.128655 )
 
 [node name="Sprite2" type="Sprite" parent="Obstaculo"]
 position = Vector2( 0, 0.000244141 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Collisio" type="CollisionShape2D" parent="Obstaculo"]
-shape = SubResource( 8 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -148,7 +147,7 @@ margin_left = 32.0
 margin_top = 544.0
 margin_right = 80.0
 margin_bottom = 568.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "0x"
 align = 1
 valign = 1
@@ -190,7 +189,7 @@ margin_left = -168.0
 margin_top = 136.0
 margin_right = 157.0
 margin_bottom = -408.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Jogo Pausado"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -223,7 +222,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 120, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Continuar"
 __meta__ = {
 "_edit_lock_": true,
@@ -237,7 +236,7 @@ margin_bottom = 130.0
 rect_min_size = Vector2( 120, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Sair do jogo"
 __meta__ = {
 "_edit_lock_": true,
@@ -254,7 +253,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda"]
 position = Vector2( -0.00012207, 0 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -272,7 +271,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda2"]
 position = Vector2( -0.00012207, 0 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -284,13 +283,13 @@ __meta__ = {
 }
 
 [node name="Moeda3" type="Area2D" parent="Moedas"]
-position = Vector2( 1198.41, -216.892 )
+position = Vector2( 1218.75, -313.894 )
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda3"]
 position = Vector2( -0.00012207, 0 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }

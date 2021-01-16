@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
 export (int) var speed = 800
-export (int) var jump_speed = -1500
+export (int) var jump_speed = -1200
 export (int) var gravity = 4000
 
 var velocity = Vector2.ZERO
 var coins = 0
+var contador = null
+
+func _ready():
+	contador = get_node("../CanvasLayer/UserMenu/Contador")
 
 func get_input():
 	velocity.x = 0
@@ -24,4 +28,4 @@ func _physics_process(delta):
 
 func add_coin():
 	coins += 1
-	print(coins)
+	contador.text = str(coins) + "x"
