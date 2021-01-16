@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
+export (int) var speed = 800
+export (int) var jump_speed = -1500
 export (int) var gravity = 4000
 
 var velocity = Vector2.ZERO
+var coins = 0
 
 func get_input():
 	velocity.x = 0
@@ -20,3 +21,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_speed
+
+func add_coin():
+	coins += 1
+	print(coins)

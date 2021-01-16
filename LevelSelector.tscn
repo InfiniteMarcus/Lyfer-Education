@@ -13,12 +13,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background Sprite" type="Sprite" parent="."]
-position = Vector2( 512.115, 301.012 )
-scale = Vector2( 0.631186, 0.261087 )
+[node name="Background Sprite" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 1 )
+expand = true
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
@@ -62,8 +63,8 @@ __meta__ = {
 }
 
 [node name="Level01" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 282.0
-margin_right = 382.0
+margin_left = 342.0
+margin_right = 442.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
@@ -71,8 +72,8 @@ size_flags_vertical = 0
 text = "Fase 01"
 
 [node name="Level02" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 402.0
-margin_right = 502.0
+margin_left = 462.0
+margin_right = 562.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
@@ -80,21 +81,11 @@ size_flags_vertical = 0
 text = "Fase 02"
 
 [node name="Level03" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 522.0
-margin_right = 622.0
+margin_left = 582.0
+margin_right = 682.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Fase 03"
-
-[node name="Level04" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 642.0
-margin_right = 742.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_constants/hseparation = 0
-text = "Fase 04"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level01" to="MarginContainer/VBoxContainer/HBoxContainer" method="_on_Level01_pressed"]
