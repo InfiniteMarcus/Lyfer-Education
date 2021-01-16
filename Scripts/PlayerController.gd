@@ -25,6 +25,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = jump_speed
+			var sound = get_node("../SoundEffects")
+			sound.stream = load("res://Musics/Jump.wav")
+			sound.play()
 
 func add_coin():
 	coins += 1

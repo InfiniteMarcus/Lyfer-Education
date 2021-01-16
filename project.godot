@@ -20,6 +20,10 @@ run/main_scene="res://MainMenu.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
 
+[autoload]
+
+MusicController="*res://Autoloads/MusicController.tscn"
+
 [display]
 
 window/stretch/mode="viewport"
