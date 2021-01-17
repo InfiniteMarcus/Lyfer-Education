@@ -28,43 +28,43 @@
 [ext_resource path="res://Scripts/EndMenu.gd" type="Script" id=26]
 [ext_resource path="res://Scripts/AreaEntered.gd" type="Script" id=27]
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.7021, 56.2874 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.9773, 48.7449 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 385.469, 671.372 )
+extents = Vector2( 385.469, 780.263 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 250.224, 268.224 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 2557.77, 25.1347 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=6]
 size = 25
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 23
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 55
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=11]
@@ -73,16 +73,16 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=12]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=13]
 radius = 19.9681
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=14]
 size = 15
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -158,7 +158,6 @@ scale = Vector2( 0.752775, 0.935204 )
 script = ExtResource( 27 )
 
 [node name="laranjas" type="Sprite" parent="Area2D"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 17 )
 __meta__ = {
 "_edit_lock_": true
@@ -166,14 +165,13 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -4.73389, 4.2868 )
-shape = SubResource( 14 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 4923.58, 359.561 )
 scale = Vector2( 3.12849, 3.69287 )
 
 [node name="Arvore2" type="Sprite" parent="StaticBody2D2"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 flip_h = true
 __meta__ = {
@@ -182,7 +180,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 position = Vector2( 0, 1.53183 )
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( 11.2318, 11.2215, 26.8943, 57.2561, -11.7825, 57.5269, -3.79138, 43.7165, -0.914673, 34.2388, -1.23425, 22.324, -0.914673, 13.117, -1.87354, 6.88882, -7.62708, 1.47298, -22.011, -4.75524, -29.0432, -13.1498, -34.7968, -23.9815, -35.436, -34.0008, -28.4039, -47.2696, -16.8967, -55.1226, -4.43066, -58.6429, 9.31396, -55.9349, 23.3782, -48.8943, 32.3282, -36.1671, 36.4835, -18.8364, 32.3282, -7.73396, 16.6658, -0.151779, 10.5925, 0.660599 )
 __meta__ = {
 "_edit_lock_": true
@@ -205,7 +202,6 @@ position = Vector2( 4548.17, 517.084 )
 scale = Vector2( 3.75974, 4.27548 )
 
 [node name="Carro_Picape_Vermelho" type="Sprite" parent="StaticBody2D3"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
@@ -254,7 +250,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 44.0227, -14.7553 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -265,21 +261,21 @@ position = Vector2( 512, 304 )
 [node name="Obstaculo" type="StaticBody2D" parent="Node2D"]
 position = Vector2( -645.718, 193.099 )
 scale = Vector2( 0.138996, 0.128655 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo"]
-position = Vector2( -155.069, -0.78125 )
-scale = Vector2( 8.833, 13.4459 )
+position = Vector2( -155.069, -85.846 )
+scale = Vector2( 8.833, 15.1644 )
 texture = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo"]
-position = Vector2( -152.618, -5.45898 )
+position = Vector2( -156.656, -57.8064 )
 shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Obstaculo12" type="StaticBody2D" parent="Node2D"]
 position = Vector2( 2337.41, 190.102 )
@@ -560,7 +556,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1985.06, -13.7973 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512, 304 )
@@ -601,7 +597,7 @@ margin_left = 380.381
 margin_top = 39.6427
 margin_right = 614.381
 margin_bottom = 65.6427
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "Tempo restante: 30"
 align = 1
 valign = 1
@@ -636,7 +632,7 @@ __meta__ = {
 margin_top = 8.0
 margin_right = 213.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Valor a receber: 0x"
 align = 1
 valign = 1
@@ -674,7 +670,7 @@ margin_left = -168.0
 margin_top = 136.0
 margin_right = 157.0
 margin_bottom = -408.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Jogo Pausado"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -707,7 +703,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 120, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 text = "Continuar"
 __meta__ = {
 "_edit_lock_": true,
@@ -721,7 +717,7 @@ margin_bottom = 130.0
 rect_min_size = Vector2( 120, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 text = "Sair do jogo"
 __meta__ = {
 "_edit_lock_": true,
@@ -761,13 +757,13 @@ margin_right = 643.122
 margin_bottom = 263.878
 custom_fonts/font = SubResource( 11 )
 text = "Seu vizinho está querendo comprar
-algumas frutas. Mas não há nenhuma
+algumas frutas, mas não há nenhuma
 feira na região. Que tal colher um pouco
 da sua horta para vender para ele?
 
-Mas atenção! Você precisa ser rápido
+Atenção! Você precisa ser rápido
 para evitar que elas estraguem
-no caminho!"
+no caminho"
 align = 1
 valign = 1
 __meta__ = {
@@ -857,7 +853,9 @@ text = "Parabéns! Você conseguiu entregar
 as frutas a tempo
 
 Com isso, você não só foi pago como
-aprendeu o valor de trabalhar duro!"
+aprendeu o valor de trabalhar duro!
+
+O que mais pode te aguardar no futuro?"
 align = 1
 valign = 1
 __meta__ = {
@@ -866,11 +864,12 @@ __meta__ = {
 }
 
 [node name="QuantMoedas" type="Label" parent="CanvasLayer/GoodEnd/Menu"]
-margin_left = 250.449
-margin_top = 245.441
-margin_right = 471.449
-margin_bottom = 266.441
-custom_fonts/font = SubResource( 15 )
+margin_left = 247.719
+margin_top = 266.0
+margin_right = 480.719
+margin_bottom = 287.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.941176, 0.968627, 0.25098, 1 )
 text = "Moedas recebidas: 0/22"
 align = 1
 valign = 1
@@ -905,18 +904,18 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="CanvasLayer/GoodEnd/Menu/HBoxContainer/VBoxContainer"]
-margin_top = 148.0
+margin_top = 135.0
 margin_right = 100.0
-margin_bottom = 398.0
-rect_min_size = Vector2( 100, 250 )
+margin_bottom = 410.0
+rect_min_size = Vector2( 100, 275 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Button" type="Button" parent="CanvasLayer/GoodEnd/Menu/HBoxContainer/VBoxContainer"]
-margin_top = 402.0
+margin_top = 414.0
 margin_right = 100.0
-margin_bottom = 452.0
+margin_bottom = 464.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -1035,7 +1034,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1055,7 +1054,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja5"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1075,7 +1074,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja6"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1095,7 +1094,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja2"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1115,7 +1114,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja7"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1135,7 +1134,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja8"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1155,7 +1154,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja9"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1175,7 +1174,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja10"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1195,7 +1194,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja11"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1215,7 +1214,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja3"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1235,7 +1234,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja4"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1255,7 +1254,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1275,7 +1274,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca11"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1295,7 +1294,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca2"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1315,7 +1314,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca7"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1335,7 +1334,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca3"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1355,7 +1354,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca5"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1375,7 +1374,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca8"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1395,7 +1394,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca9"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1415,7 +1414,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca10"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1435,7 +1434,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca6"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1455,7 +1454,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca4"]
 position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1476,7 +1475,7 @@ margin_left = 3836.49
 margin_top = 450.425
 margin_right = 4056.49
 margin_bottom = 476.425
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Obrigado vizinho!"
 align = 1
 valign = 1
