@@ -1,6 +1,8 @@
 # Lyfer Education
 
-![Logo do Lyfer Education](https://github.com/Infinitemarcus/Lyfer-Education/blob/main/HTML/logo.png)
+<p align="center">
+  <img src="https://github.com/Infinitemarcus/Lyfer-Education/blob/main/HTML/logo.png" />
+</p>
 
 ## O que é?
 
