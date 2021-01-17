@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sprites/Menu.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/FSEX300.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/HelpPopUp.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -16,16 +17,57 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxTexture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+[sub_resource type="Theme" id=8]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -60,16 +102,16 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 1024.0
 margin_bottom = 600.0
-custom_constants/separation = 65
+custom_constants/separation = 45
 alignment = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 126.0
+margin_top = 123.0
 margin_right = 1024.0
-margin_bottom = 162.0
+margin_bottom = 159.0
 custom_fonts/font = SubResource( 1 )
 text = "Geração de renda"
 align = 1
@@ -79,17 +121,35 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 227.0
+margin_top = 204.0
 margin_right = 1024.0
-margin_bottom = 253.0
+margin_bottom = 230.0
 custom_fonts/font = SubResource( 2 )
 text = "Selecione um tópico para explorar:"
 align = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 318.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 275.0
 margin_right = 1024.0
-margin_bottom = 368.0
+margin_bottom = 296.0
+alignment = 1
+
+[node name="Label2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+light_mask = 2
+margin_left = 387.0
+margin_right = 637.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 250, 0 )
+mouse_default_cursor_shape = 2
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0.678431, 1, 1 )
+text = "Quer ajuda? Clique aqui!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 341.0
+margin_right = 1024.0
+margin_bottom = 391.0
 custom_constants/separation = 20
 alignment = 1
 __meta__ = {
@@ -103,7 +163,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 10 )
 text = "Empreendedorismo"
 
 [node name="Level02" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -113,7 +173,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 11 )
 text = "Jovem Aprendiz"
 
 [node name="Level03" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -123,7 +183,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 text = "Cooperativismo"
 
 [node name="Level04" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -133,13 +193,13 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 12 )
 text = "Ensino profissionalizante"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 433.0
+margin_top = 436.0
 margin_right = 1024.0
-margin_bottom = 473.0
+margin_bottom = 476.0
 alignment = 1
 script = ExtResource( 3 )
 
@@ -148,7 +208,167 @@ margin_left = 462.0
 margin_right = 562.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 13 )
 text = "Voltar"
+
+[node name="PopUp" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 228.0
+margin_top = 216.0
+margin_right = -20.0
+margin_bottom = 29.9999
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="ColorRect" parent="PopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -82.8978
+margin_top = -97.592
+margin_right = -124.898
+margin_bottom = -132.592
+color = Color( 0, 0, 0, 0.815686 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PopUp/Menu"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 740.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 15 )
+custom_constants/line_spacing = 10
+text = "Aprenda mais sobre algumas formas de gerar renda:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUp/Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.3371
+margin_top = 4.65613
+margin_right = 3.33734
+margin_bottom = -20.3439
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PopUp/Menu/VBoxContainer"]
+margin_top = 65.0
+margin_right = 734.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 14 )
+text = "Empreendedorismo: como iniciar seu próprio negócio e dar
+vida às suas ideias"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="PopUp/Menu/VBoxContainer"]
+margin_top = 126.0
+margin_right = 734.0
+margin_bottom = 167.0
+custom_fonts/font = SubResource( 14 )
+text = "Jovem Aprendiz: como se tornar um aprendiz de empresas
+de grande e médio porte"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="PopUp/Menu/VBoxContainer"]
+margin_top = 187.0
+margin_right = 734.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 14 )
+text = "Cooperativismo: como participar e colaborar de cooperativas
+locais e nacionais"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="PopUp/Menu/VBoxContainer"]
+margin_top = 248.0
+margin_right = 734.0
+margin_bottom = 289.0
+custom_fonts/font = SubResource( 14 )
+text = "Ensino profissionalizante: como encontrar e realizar cursos
+de capacitação profissional em várias áreas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUp/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUp/Menu/HBoxContainer"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 500 )
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="PopUp/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 123.0
+margin_right = 100.0
+margin_bottom = 423.0
+rect_min_size = Vector2( 100, 300 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="PopUp/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 427.0
+margin_right = 100.0
+margin_bottom = 477.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Fechar"
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/Label2" to="PopUp" method="_on_Label2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level01" to="MarginContainer/VBoxContainer/HBoxContainer2" method="_on_Level01_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="MarginContainer/VBoxContainer/HBoxContainer2" method="_on_Button_pressed"]
+[connection signal="pressed" from="PopUp/Menu/HBoxContainer/VBoxContainer/Button" to="PopUp" method="_on_Button_pressed"]

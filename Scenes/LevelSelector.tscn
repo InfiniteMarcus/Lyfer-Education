@@ -11,45 +11,45 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=2]
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=3]
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=4]
 
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=5]
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=6]
 
-[sub_resource type="Theme" id=8]
+[sub_resource type="Theme" id=7]
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 9 )
-Button/styles/focus = SubResource( 10 )
-Button/styles/hover = SubResource( 11 )
-Button/styles/normal = SubResource( 7 )
-Button/styles/pressed = SubResource( 12 )
+Button/styles/disabled = SubResource( 2 )
+Button/styles/focus = SubResource( 3 )
+Button/styles/hover = SubResource( 4 )
+Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -115,9 +115,9 @@ margin_right = 637.0
 margin_bottom = 21.0
 rect_min_size = Vector2( 250, 0 )
 mouse_default_cursor_shape = 2
-theme = SubResource( 8 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.0666667, 0.407843, 0.976471, 1 )
+theme = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0.678431, 1, 1 )
 text = "Quer ajuda? Clique aqui!"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -138,7 +138,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 9 )
 text = "Geração de renda"
 
 [node name="Level02" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -148,7 +148,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 10 )
 text = "Escolha de carreira"
 
 [node name="Level03" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -158,7 +158,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 11 )
 text = "Educação financeira"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -173,7 +173,7 @@ margin_left = 462.0
 margin_right = 562.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 100, 40 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 12 )
 text = "Voltar"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level01" to="MarginContainer/VBoxContainer/HBoxContainer" method="_on_Level01_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level02" to="MarginContainer/VBoxContainer/HBoxContainer" method="_on_Level02_pressed"]
