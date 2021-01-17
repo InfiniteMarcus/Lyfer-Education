@@ -48,19 +48,20 @@ h2 {
 }
 
 .carrosel {
-    margin-top: 200px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1100px;
 }
 
-.jogue-agora {
+.jogue-agora, .pre-texto {
     margin-left: auto;
     margin-right: auto;
     width: 80vw;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
 }
+
 
 .buttons {
     margin-left: auto;
@@ -75,4 +76,10 @@ h2 {
 .buttons button {
     padding: 20px;
     width: 200px;
+}
+
+footer{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 35px;
 }

@@ -3,17 +3,12 @@
 [ext_resource path="res://Sprites/Menu.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/FSEX300.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/logo.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 45
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
@@ -30,6 +25,7 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -61,54 +57,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 133.0
-margin_right = 350.0
-margin_bottom = 179.0
-custom_fonts/font = SubResource( 1 )
-text = "Lyfer Education"
-align = 1
+[node name="Sprite" type="Sprite" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2( 175, 136 )
+scale = Vector2( 0.836983, 0.810951 )
+texture = ExtResource( 4 )
 
 [node name="Container" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 204.0
+margin_top = 136.0
 margin_right = 350.0
-margin_bottom = 239.0
-rect_min_size = Vector2( 100, 35 )
+margin_bottom = 236.0
+rect_min_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Botão - Começar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 264.0
+margin_top = 261.0
 margin_right = 350.0
-margin_bottom = 314.0
+margin_bottom = 311.0
 rect_min_size = Vector2( 350, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Começar jogo"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Botão - Instruções" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 339.0
+margin_top = 336.0
 margin_right = 350.0
-margin_bottom = 389.0
+margin_bottom = 386.0
 rect_min_size = Vector2( 350, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Como jogar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Botão - Personagem" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 414.0
+margin_top = 411.0
 margin_right = 350.0
-margin_bottom = 464.0
+margin_bottom = 461.0
 rect_min_size = Vector2( 350, 50 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Escolha seu personagem"
 __meta__ = {
 "_edit_use_anchors_": false
