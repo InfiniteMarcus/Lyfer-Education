@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://background.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Menu.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/ChangeCharacter.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/FSEX300.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Sprites/Mulher-2.png" type="Texture" id=4]
