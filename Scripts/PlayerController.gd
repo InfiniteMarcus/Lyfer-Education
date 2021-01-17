@@ -9,7 +9,7 @@ var coins = 0
 var contador = null
 
 func _ready():
-	contador = get_node("../CanvasLayer/UserMenu/Contador")
+	contador = get_node("../CanvasLayer/UserMenu/HBoxContainer/Contador")
 
 func get_input():
 	velocity.x = 0
@@ -31,4 +31,4 @@ func _physics_process(delta):
 
 func add_coin():
 	coins += 1
-	contador.text = str(coins) + "x"
+	contador.text = "Valor a receber: " + str(coins) + "x"

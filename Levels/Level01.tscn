@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Sprites/caixa.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=2]
@@ -16,18 +16,38 @@
 [ext_resource path="res://Sprites/Arvore1.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/cerca.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Arvore2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/laranjas.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/laranja.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/maca.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Carro_familia_Azul.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Mulher-1.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Homem4.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/galho.png" type="Texture" id=23]
+[ext_resource path="res://Scripts/PopUp.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/EndMenu.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/AreaEntered.gd" type="Script" id=27]
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 42.7021, 56.2874 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.9773, 48.7449 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 2557.77, 25.1347 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 385.469, 671.372 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 250.224, 268.224 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2557.77, 25.1347 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 23
@@ -47,9 +67,26 @@ font_data = ExtResource( 10 )
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 10 )
 
-[sub_resource type="CapsuleShape2D" id=9]
-radius = 16.0
-height = 16.0
+[sub_resource type="DynamicFont" id=11]
+size = 25
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 19.9681
+
+[sub_resource type="DynamicFont" id=13]
+size = 15
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
@@ -87,40 +124,95 @@ __meta__ = {
 }
 
 [node name="Casa1" type="Sprite" parent="Background - sprite2"]
-position = Vector2( 166.793, 32.904 )
+position = Vector2( 159.506, 32.904 )
 scale = Vector2( 0.657979, 0.54144 )
 texture = ExtResource( 11 )
 flip_h = true
 
 [node name="Background - sprite4" type="Sprite" parent="."]
-position = Vector2( 6045.85, 298.531 )
+position = Vector2( 6045.45, 298.531 )
 scale = Vector2( 4.1497, 4.2017 )
 texture = ExtResource( 9 )
 
 [node name="Arvore1" type="Sprite" parent="."]
-position = Vector2( 656.559, 430.868 )
-scale = Vector2( 2.15623, 2.08526 )
+position = Vector2( 638.038, 442.17 )
+scale = Vector2( 2.61925, 3.02838 )
 texture = ExtResource( 14 )
+offset = Vector2( 0, -21.9504 )
+
+[node name="Arvore4" type="Sprite" parent="."]
+position = Vector2( 3073.74, 390.444 )
+scale = Vector2( 4.84798, 4.19373 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, -21.9504 )
 
 [node name="Arvore2" type="Sprite" parent="."]
-position = Vector2( 3624.57, 421.493 )
-scale = Vector2( 2.15623, 2.08526 )
+position = Vector2( 2515.8, 408.125 )
+scale = Vector2( 3.83449, 4.16044 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, -21.9504 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 4832.85, 521.003 )
+scale = Vector2( 0.752775, 0.935204 )
+script = ExtResource( 27 )
+
+[node name="laranjas" type="Sprite" parent="Area2D"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -4.73389, 4.2868 )
+shape = SubResource( 14 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 4923.58, 359.561 )
+scale = Vector2( 3.12849, 3.69287 )
+
+[node name="Arvore2" type="Sprite" parent="StaticBody2D2"]
+scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( 0, 1.53183 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( 11.2318, 11.2215, 26.8943, 57.2561, -11.7825, 57.5269, -3.79138, 43.7165, -0.914673, 34.2388, -1.23425, 22.324, -0.914673, 13.117, -1.87354, 6.88882, -7.62708, 1.47298, -22.011, -4.75524, -29.0432, -13.1498, -34.7968, -23.9815, -35.436, -34.0008, -28.4039, -47.2696, -16.8967, -55.1226, -4.43066, -58.6429, 9.31396, -55.9349, 23.3782, -48.8943, 32.3282, -36.1671, 36.4835, -18.8364, 32.3282, -7.73396, 16.6658, -0.151779, 10.5925, 0.660599 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Arvore3" type="Sprite" parent="."]
-position = Vector2( 1421.41, 421.446 )
-scale = Vector2( 2.30963, 2.27463 )
+position = Vector2( 1405.66, 372.939 )
+scale = Vector2( 2.70335, 3.10381 )
 texture = ExtResource( 16 )
 flip_h = true
 
-[node name="Carro_Picape_Vermelho" type="Sprite" parent="."]
-position = Vector2( 4560.17, 526.084 )
-scale = Vector2( 3.32338, 3.65479 )
+[node name="Arvore5" type="Sprite" parent="."]
+position = Vector2( 3420.05, 151.492 )
+scale = Vector2( 4.49054, 6.71371 )
+texture = ExtResource( 16 )
+flip_h = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 4548.17, 517.084 )
+scale = Vector2( 3.75974, 4.27548 )
+
+[node name="Carro_Picape_Vermelho" type="Sprite" parent="StaticBody2D3"]
+scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PoolVector2Array( -10.7198, -0.41642, -22.0171, -3.83827, -27.4147, 1.01855, -25.1552, 8.08302, -15.4897, 8.30378, -13.858, 12.3879, -10.9709, 13.9333, -6.70313, 14.0436, 18.6526, 13.8229, 24.3013, 8.1934, 26.4352, 5.65461, 26.3096, -4.72133, 7.35559, -4.72133, 7.22998, -13.7727, -9.59021, -13.5519, -17.7493, -4.61094, -22.3936, -3.94865 )
+
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2( 1210.87, 531.433 )
+position = Vector2( 1160.75, 529.662 )
 scale = Vector2( 3.27554, 3.28363 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
@@ -137,6 +229,16 @@ flip_h = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Homem4" type="Sprite" parent="."]
+position = Vector2( 3974.28, 528.262 )
+scale = Vector2( 0.475052, 0.527036 )
+texture = ExtResource( 22 )
+
+[node name="Mulher-1" type="Sprite" parent="."]
+position = Vector2( 3927.78, 527.803 )
+scale = Vector2( 1.69722, 1.54985 )
+texture = ExtResource( 21 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 147.851, 456.925 )
@@ -157,6 +259,299 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 512, 304 )
+
+[node name="Obstaculo" type="StaticBody2D" parent="Node2D"]
+position = Vector2( -645.718, 193.099 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo"]
+position = Vector2( -155.069, -0.78125 )
+scale = Vector2( 8.833, 13.4459 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo"]
+position = Vector2( -152.618, -5.45898 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo12" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 2337.41, 190.102 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo12"]
+position = Vector2( -155.069, -35.6296 )
+scale = Vector2( 8.833, 14.1499 )
+texture = ExtResource( 15 )
+
+[node name="Collisio" type="CollisionPolygon2D" parent="Node2D/Obstaculo12"]
+position = Vector2( -152.618, -5.45898 )
+polygon = PoolVector2Array( -44.1426, -8.29688, -248.092, 652.732, -316.076, 412.803, -248.092, 153.288, -261.689, -96.4341, -361.398, 6.39282, -397.654, -106.227, -260.426, -718.198, 137.504, -727.098, 251.838, -739.451, 251.838, -731.216, 252.67, -655.661, 245.881, -79.748, 233.393, 662.729, -248.092, 652.732 )
+
+[node name="Obstaculo2" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 265.774, 192.711 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo2"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo2"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo13" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 3502.19, 194.329 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo13"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo13"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo3" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1498.02, 193.745 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo3"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo3"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo4" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1568.2, 193.745 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo4"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo4"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo5" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1568.2, 123.635 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo5"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo5"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo6" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1638.28, 192.379 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo6"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo6"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo7" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1638.28, 122.968 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo7"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo7"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo8" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1638.28, 53.5562 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo8"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo8"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo9" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1805.13, 193.714 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo9"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo9"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo10" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1873.88, 193.047 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo10"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo10"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Obstaculo11" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 1873.88, 122.968 )
+scale = Vector2( 0.138996, 0.128655 )
+
+[node name="Sprite2" type="Sprite" parent="Node2D/Obstaculo11"]
+position = Vector2( -1692.15, 357.769 )
+scale = Vector2( 15.8239, 17.5232 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collisio" type="CollisionShape2D" parent="Node2D/Obstaculo11"]
+position = Vector2( -1692.08, 354.897 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( 3143.5, 338.4 )
+scale = Vector2( 5.32261, 2.87443 )
+
+[node name="galho" type="Sprite" parent="StaticBody2D5"]
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+polygon = PoolVector2Array( 12.3411, -0.552864, 12.142, -4.60725, -1.39337, 1.29005, -12.142, 1.29005, -11.943, 6.81877, 2.98578, 6.45018 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2( 3358.8, 284.367 )
+rotation = -3.17301
+scale = Vector2( 5.32261, 2.87443 )
+
+[node name="galho" type="Sprite" parent="StaticBody2D6"]
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D6"]
+polygon = PoolVector2Array( 12.3411, -0.552864, 12.142, -4.60725, -1.39337, 1.29005, -12.142, 1.29005, -11.943, 6.81877, 2.98578, 6.45018 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2( 3544.59, 192.971 )
+scale = Vector2( 5.32261, 2.87443 )
+
+[node name="galho" type="Sprite" parent="StaticBody2D7"]
+texture = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D7"]
+polygon = PoolVector2Array( 12.3411, -0.552864, 12.142, -4.60725, -1.39337, 1.29005, -12.142, 1.29005, -11.943, 6.81877, 2.98578, 6.45018 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 363.456, 616.122 )
 __meta__ = {
@@ -172,46 +567,8 @@ position = Vector2( 512, 304 )
 current = true
 script = ExtResource( 3 )
 
-[node name="Obstaculo" type="StaticBody2D" parent="."]
-position = Vector2( -133.718, 492.604 )
-scale = Vector2( 0.138996, 0.128655 )
-
-[node name="Sprite2" type="Sprite" parent="Obstaculo"]
-position = Vector2( -155.069, -0.78125 )
-scale = Vector2( 8.833, 13.4459 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Collisio" type="CollisionShape2D" parent="Obstaculo"]
-position = Vector2( -152.618, -5.45898 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Obstaculo2" type="StaticBody2D" parent="."]
-position = Vector2( 1055.21, 497.279 )
-scale = Vector2( 0.138996, 0.128655 )
-
-[node name="Sprite2" type="Sprite" parent="Obstaculo2"]
-position = Vector2( -1692.15, 357.769 )
-scale = Vector2( 15.8239, 17.5232 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Collisio" type="CollisionShape2D" parent="Obstaculo2"]
-position = Vector2( -1692.08, 354.897 )
-shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Obstaculo3" type="StaticBody2D" parent="."]
-position = Vector2( 1223.66, 498.338 )
+position = Vector2( 2968.13, 496.088 )
 scale = Vector2( 0.138996, 0.128655 )
 
 [node name="Sprite2" type="Sprite" parent="Obstaculo3"]
@@ -239,23 +596,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Contador" type="Label" parent="CanvasLayer/UserMenu"]
-margin_left = 32.0
-margin_top = 544.0
-margin_right = 80.0
-margin_bottom = 568.0
-custom_fonts/font = SubResource( 5 )
-text = "0x"
+[node name="Timer" type="Label" parent="CanvasLayer/UserMenu"]
+margin_left = 380.381
+margin_top = 39.6427
+margin_right = 614.381
+margin_bottom = 65.6427
+custom_fonts/font = SubResource( 12 )
+text = "Tempo restante: 30"
 align = 1
 valign = 1
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="CanvasLayer/UserMenu/Timer"]
+wait_time = 30.0
+one_shot = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UserMenu"]
+margin_left = 13.773
+margin_top = 553.04
+margin_right = 226.773
+margin_bottom = 593.04
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/UserMenu"]
-position = Vector2( 83, 546.25 )
-scale = Vector2( 0.65, 0.73 )
+[node name="Sprite" type="Sprite" parent="CanvasLayer/UserMenu/HBoxContainer"]
+position = Vector2( 238.995, 18.0331 )
+scale = Vector2( 0.708399, 0.556472 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Contador" type="Label" parent="CanvasLayer/UserMenu/HBoxContainer"]
+margin_top = 8.0
+margin_right = 213.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 5 )
+text = "Valor a receber: 0x"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="PauseMenu" type="Control" parent="CanvasLayer"]
 pause_mode = 2
@@ -340,82 +728,765 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Moedas" type="Node2D" parent="."]
+[node name="PopUp" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 262.0
+margin_top = 186.0
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="ColorRect" parent="CanvasLayer/PopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -82.8978
+margin_top = -97.592
+margin_right = -124.898
+margin_bottom = -132.592
+color = Color( 0, 0, 0, 0.521569 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/PopUp/Menu"]
+margin_left = 71.1225
+margin_top = 34.8775
+margin_right = 643.122
+margin_bottom = 263.878
+custom_fonts/font = SubResource( 11 )
+text = "Seu vizinho está querendo comprar
+algumas frutas. Mas não há nenhuma
+feira na região. Que tal colher um pouco
+da sua horta para vender para ele?
+
+Mas atenção! Você precisa ser rápido
+para evitar que elas estraguem
+no caminho!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PopUp/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PopUp/Menu/HBoxContainer"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 500 )
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/PopUp/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 100.0
+margin_bottom = 398.0
+rect_min_size = Vector2( 100, 250 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/PopUp/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 402.0
+margin_right = 100.0
+margin_bottom = 452.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Continuar"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GoodEnd" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 262.0
+margin_top = 186.0
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="ColorRect" parent="CanvasLayer/GoodEnd"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -82.8978
+margin_top = -97.592
+margin_right = -124.898
+margin_bottom = -132.592
+color = Color( 0, 0, 0, 0.521569 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/GoodEnd/Menu"]
+margin_left = 71.1225
+margin_top = 34.8775
+margin_right = 643.122
+margin_bottom = 263.878
+custom_fonts/font = SubResource( 11 )
+text = "Parabéns! Você conseguiu entregar
+as frutas a tempo
+
+Com isso, você não só foi pago como
+aprendeu o valor de trabalhar duro!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuantMoedas" type="Label" parent="CanvasLayer/GoodEnd/Menu"]
+margin_left = 250.449
+margin_top = 245.441
+margin_right = 471.449
+margin_bottom = 266.441
+custom_fonts/font = SubResource( 15 )
+text = "Moedas recebidas: 0/22"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GoodEnd/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GoodEnd/Menu/HBoxContainer"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 500 )
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/GoodEnd/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 148.0
+margin_right = 100.0
+margin_bottom = 398.0
+rect_min_size = Vector2( 100, 250 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/GoodEnd/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 402.0
+margin_right = 100.0
+margin_bottom = 452.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Continuar"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BadEnd" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 262.0
+margin_top = 186.0
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="ColorRect" parent="CanvasLayer/BadEnd"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -82.8978
+margin_top = -97.592
+margin_right = -124.898
+margin_bottom = -132.592
+color = Color( 0, 0, 0, 0.521569 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/BadEnd/Menu"]
+margin_left = 71.1225
+margin_top = 34.8775
+margin_right = 643.122
+margin_bottom = 263.878
+custom_fonts/font = SubResource( 11 )
+text = "Que pena! Infelizmente o tempo
+acabou e as frutas estragaram
+
+Mas não fique triste. Você pode tentar
+novamente!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BadEnd/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BadEnd/Menu/HBoxContainer"]
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 500 )
+alignment = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/BadEnd/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 173.0
+margin_right = 100.0
+margin_bottom = 373.0
+rect_min_size = Vector2( 100, 200 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/BadEnd/Menu/HBoxContainer/VBoxContainer"]
+margin_top = 377.0
+margin_right = 100.0
+margin_bottom = 427.0
+rect_min_size = Vector2( 100, 50 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Recomeçar"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Frutas" type="Node2D" parent="."]
 position = Vector2( 336, 392 )
 scale = Vector2( 0.663328, 0.752776 )
 
-[node name="Moeda" type="Area2D" parent="Moedas"]
+[node name="Laranja" type="Area2D" parent="Frutas"]
+position = Vector2( 450.443, -53.5002 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda"]
-position = Vector2( -0.00012207, 0 )
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja"]
+position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Moedas/Moeda"]
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Moeda2" type="Area2D" parent="Moedas"]
-position = Vector2( 687.442, 53.1367 )
+[node name="Laranja5" type="Area2D" parent="Frutas"]
+position = Vector2( 334.841, -121.056 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda2"]
-position = Vector2( -0.00012207, 0 )
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja5"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja5"]
+position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Moedas/Moeda2"]
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Moeda3" type="Area2D" parent="Moedas"]
-position = Vector2( 1198.41, -216.892 )
+[node name="Laranja6" type="Area2D" parent="Frutas"]
+position = Vector2( 562.768, -122.729 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda3"]
-position = Vector2( -0.00012207, 0 )
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja6"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja6"]
+position = Vector2( -0.580597, 0.986786 )
 scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Moedas/Moeda3"]
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Moeda4" type="Area2D" parent="Moedas"]
-position = Vector2( 2962.51, 143.366 )
+[node name="Laranja2" type="Area2D" parent="Frutas"]
+position = Vector2( 3180.37, -238.993 )
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moedas/Moeda4"]
-position = Vector2( -0.00012207, 0 )
-scale = Vector2( 1.50755, 1.32842 )
-shape = SubResource( 9 )
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja2"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Moedas/Moeda4"]
-texture = ExtResource( 7 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja2"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja7" type="Area2D" parent="Frutas"]
+position = Vector2( 4631.5, -342.762 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja7"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja7"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja8" type="Area2D" parent="Frutas"]
+position = Vector2( 4373.19, -212.214 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja8"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja8"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja9" type="Area2D" parent="Frutas"]
+position = Vector2( 5072.7, -439.381 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja9"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja9"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja10" type="Area2D" parent="Frutas"]
+position = Vector2( 5206.32, -280.214 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja10"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja10"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja11" type="Area2D" parent="Frutas"]
+position = Vector2( 5269.68, -124.482 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja11"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja11"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja3" type="Area2D" parent="Frutas"]
+position = Vector2( 3307.14, -299.314 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja3"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja3"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laranja4" type="Area2D" parent="Frutas"]
+position = Vector2( 3340.1, -212.183 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Laranja4"]
+position = Vector2( -0.503658, 1.20111 )
+scale = Vector2( 0.941145, 0.840841 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Laranja4"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca" type="Area2D" parent="Frutas"]
+position = Vector2( 1583.47, -8.30322 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca11" type="Area2D" parent="Frutas"]
+position = Vector2( 1076.93, -173.027 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca11"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca11"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca2" type="Area2D" parent="Frutas"]
+position = Vector2( 1702.99, -24.6035 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca2"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca2"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca7" type="Area2D" parent="Frutas"]
+position = Vector2( 1617.52, -109.962 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca7"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca7"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca3" type="Area2D" parent="Frutas"]
+position = Vector2( 2509.58, 190.996 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca3"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca3"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca5" type="Area2D" parent="Frutas"]
+position = Vector2( 3985.04, -191.306 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca5"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca5"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca8" type="Area2D" parent="Frutas"]
+position = Vector2( 6133.14, -91.7875 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca8"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca8"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca9" type="Area2D" parent="Frutas"]
+position = Vector2( 5980.88, -169.527 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca9"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca9"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca10" type="Area2D" parent="Frutas"]
+position = Vector2( 5793.05, -77.9951 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca10"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca10"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca6" type="Area2D" parent="Frutas"]
+position = Vector2( 4137.43, -173.929 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca6"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca6"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Maca4" type="Area2D" parent="Frutas"]
+position = Vector2( 4478.43, 205.751 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Frutas/Maca4"]
+position = Vector2( -0.304025, -1.26188 )
+scale = Vector2( 0.854339, 0.771461 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frutas/Maca4"]
+position = Vector2( -0.580597, 0.986786 )
+scale = Vector2( 1.50755, 1.32842 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="SoundEffects" type="AudioStreamPlayer" parent="."]
 volume_db = -8.077
+
+[node name="Carro_familia_Azul" type="Sprite" parent="."]
+position = Vector2( 3292.91, 522.884 )
+scale = Vector2( 3.81911, 4.03791 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3836.49
+margin_top = 450.425
+margin_right = 4056.49
+margin_bottom = 476.425
+custom_fonts/font = SubResource( 13 )
+text = "Obrigado vizinho!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Menu/HBoxContainer/VBoxContainer/Continuar" to="CanvasLayer/PauseMenu" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Menu/HBoxContainer/VBoxContainer/Sair" to="CanvasLayer/PauseMenu" method="_on_Sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/PopUp/Menu/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/PopUp" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GoodEnd/Menu/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/GoodEnd" method="continuar"]
+[connection signal="pressed" from="CanvasLayer/BadEnd/Menu/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/BadEnd" method="recomecar"]
