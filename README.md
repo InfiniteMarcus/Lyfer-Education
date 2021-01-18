@@ -22,8 +22,8 @@ Este projeto foi desenvolvido durante a [2ª edição do Hackathon - CCR](http:/
 
 ## Links
 
-* Video pitch
-* Video demonstração
+* [Video pitch](https://youtu.be/-zasf69tubE)
+* [Video demonstração](https://youtu.be/1qw2c1JlXPA)
 
 ## Equipe (Time 305 - plataforma Shawee)
 
