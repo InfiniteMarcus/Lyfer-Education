@@ -1,7 +1,7 @@
 # Lyfer Education
 
 <p align="center">
-  <img src="https://github.com/Infinitemarcus/Lyfer-Education/blob/main/HTML/logo.png" />
+  <img src="https://github.com/Infinitemarcus/Lyfer-Education/blob/main/docs/logo.png" />
 </p>
 
 ## O que é?
@@ -24,6 +24,7 @@ Este projeto foi desenvolvido durante a [2ª edição do Hackathon - CCR](http:/
 
 * [Video pitch](https://youtu.be/-zasf69tubE)
 * [Video demonstração](https://youtu.be/1qw2c1JlXPA)
+* [Demonstração](https://infinitemarcus.github.io/Lyfer-Education/)
 
 ## Equipe (Time 305 - plataforma Shawee)
 
